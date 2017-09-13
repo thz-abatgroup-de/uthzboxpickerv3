@@ -23,6 +23,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <!--
         <activity
             android:name="com.abat.us.boxpicker_v01.TestActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
@@ -33,6 +34,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        -->
     </application>
 
 </manifest>
