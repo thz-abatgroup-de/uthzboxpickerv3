@@ -35,12 +35,10 @@ public class MainActivityModel {
     private State mState;
     private ProductOnShelf mProductToPick;
 
-    private boolean pShowPicSeparate;
     private boolean pConfirmShelfId;
     private boolean pConfirmProductId;
 
     private int mMaxNumRows;
-    private int mMaxNumColumns;
     private String[] mColumnInfo;
 
     private ProductOnShelfManager mProductOnShelfManager;
@@ -63,9 +61,7 @@ public class MainActivityModel {
         Resources lRes  = mActivity.getResources();
 
         mMaxNumRows      = lRes.getInteger(R.integer.shelf_rows_max);
-        mMaxNumColumns   = lRes.getInteger(R.integer.shelf_columns_max);
 
-        pShowPicSeparate = lRes.getBoolean(R.bool.show_pic_separate);
         pConfirmShelfId = lRes.getBoolean(R.bool.confirm_shelf_id);
         pConfirmProductId = lRes.getBoolean(R.bool.confirm_product_id);
 
@@ -81,7 +77,7 @@ public class MainActivityModel {
         }
 
         int lResIdProductIds                   = R.array.product_ids;
-        int lResIdProductPics                  = getShowPicSeparate() ? R.array.product_pics_var0 : R.array.product_pics_var1;
+        int lResIdProductPics                  = R.array.product_pics;
         int lResIdShelfIds                     = R.array.shelf_ids;
         int lResIdShelfContainsProductIds      = R.array.shelf_contains_products;
         int lResIdShelfChoosingProbabilities   = R.array.shelf_choosing_probability;
@@ -132,7 +128,6 @@ public class MainActivityModel {
     int getMaxNumRows() { return mMaxNumRows; }
     String[] getColumnInfo() { return mColumnInfo; }
 
-    boolean getShowPicSeparate() { return pShowPicSeparate; }
     boolean getConfirmShelfId() { return pConfirmShelfId; }
     boolean getConfirmProductId() { return pConfirmProductId; }
 
@@ -165,6 +160,7 @@ public class MainActivityModel {
     }
 
     private void onStateChange( final MainActivityModel.State pOldState, final MainActivityModel.State pNewState ) {
+        if( pOldState == pNewState ) return;
         switch (pNewState) {
             case SCAN_SHELF:
                 mProductToPick = mProductOnShelfManager.getNextPick();

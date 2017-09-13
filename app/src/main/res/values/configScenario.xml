@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <bool name="show_pic_separate">true</bool>  <!-- <== this option is currently not supported! -->
-
     <bool name="confirm_shelf_id">true</bool>
     <bool name="confirm_product_id">false</bool>
 
@@ -11,24 +9,24 @@
         <item>P2</item>
         <item>P3</item>
         <item>P4</item>
+        <item>P5</item>
+        <item>P6</item>
     </array>
     <array name="product_descriptions">
+        <item>Umbrella</item>
+        <item>Pen</item>
+        <item>Travel Mug</item>
+        <item>Post its</item>
+        <item>Bottle Opener</item>
         <item>USB Stick</item>
-        <item>Kladde</item>
-        <item>Kreisel</item>
-        <item>Lany Book</item>
     </array>
-    <array name="product_pics_var0">
-        <item>@drawable/logimat_usb_stick_250px</item>   <!-- Product 1 -->
-        <item>@drawable/logimat_kladde_250px</item>      <!-- Product 2 -->
-        <item>@drawable/logimat_kreisel_250px</item>     <!-- Product 3 -->
-        <item>@drawable/logimat_lany_book_250px</item>   <!-- Product 4 -->
-    </array>
-    <array name="product_pics_var1">
-        <item>@drawable/logimat_usb_stick_250px</item>   <!-- Product 1 -->
-        <item>@drawable/logimat_kladde_250px</item>      <!-- Product 2 -->
-        <item>@drawable/logimat_kreisel_250px</item>     <!-- Product 3 -->
-        <item>@drawable/logimat_lany_book_250px</item>   <!-- Product 4 -->
+    <array name="product_pics">
+        <item>@drawable/p1_umbrella</item>   <!-- Product 1 -->
+        <item>@drawable/p2_pen</item>   <!-- Product 1 -->
+        <item>@drawable/p3_travel_mug</item>   <!-- Product 1 -->
+        <item>@drawable/p4_post_its</item>   <!-- Product 1 -->
+        <item>@drawable/p5_bottle_opener</item>   <!-- Product 1 -->
+        <item>@drawable/p6_usb_stick</item>   <!-- Product 1 -->
     </array>
 
     <integer name="shelf_rows_max">3</integer>
@@ -51,20 +49,20 @@
         <item>3C</item>
     </array>
     <array name="shelf_contains_products">
-        <item>P2</item>
+        <item>P1</item>
         <item>P2</item>
         <item>P3</item>
-        <item></item>
-        <item>P1</item>
-        <item>P1</item>
+        <item>P4</item>
+        <item>P5</item>
+        <item>P6</item>
     </array>
     <array name="shelf_choosing_probability">
-        <item>60</item>
-        <item>10</item>
-        <item>10</item>
-        <item></item>
-        <item>10</item>
-        <item>10</item>
+        <item>1</item>
+        <item>12</item>
+        <item>4</item>
+        <item>6</item>
+        <item>3</item>
+        <item>2</item>
     </array>
 
 </resources>
