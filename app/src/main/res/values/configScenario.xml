@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <bool name="show_pic_separate">true</bool>  <!-- <== this option is currently not supported! -->
+
+    <bool name="confirm_shelf_id">true</bool>
+    <bool name="confirm_product_id">false</bool>
+
+    <array name="product_ids">
+        <item>P1</item>
+        <item>P2</item>
+        <item>P3</item>
+        <item>P4</item>
+    </array>
+    <array name="product_descriptions">
+        <item>USB Stick</item>
+        <item>Kladde</item>
+        <item>Kreisel</item>
+        <item>Lany Book</item>
+    </array>
+    <array name="product_pics_var0">
+        <item>@drawable/logimat_usb_stick_250px</item>   <!-- Product 1 -->
+        <item>@drawable/logimat_kladde_250px</item>      <!-- Product 2 -->
+        <item>@drawable/logimat_kreisel_250px</item>     <!-- Product 3 -->
+        <item>@drawable/logimat_lany_book_250px</item>   <!-- Product 4 -->
+    </array>
+    <array name="product_pics_var1">
+        <item>@drawable/logimat_usb_stick_250px</item>   <!-- Product 1 -->
+        <item>@drawable/logimat_kladde_250px</item>      <!-- Product 2 -->
+        <item>@drawable/logimat_kreisel_250px</item>     <!-- Product 3 -->
+        <item>@drawable/logimat_lany_book_250px</item>   <!-- Product 4 -->
+    </array>
+
+    <integer name="shelf_rows_max">3</integer>
+    <integer name="shelf_columns_max">6</integer>
+    <array name="shelf_columns">
+        <!--
+        Each item represents a row (top to bottom)
+        Within the item: comma separated list of shelf ids
+        -->
+        <item>3A</item>
+        <item>2A,2B</item>
+        <item>1A,1B,1C</item>
+    </array>
+    <array name="shelf_ids">
+        <item>1A</item>
+        <item>1B</item>
+        <item>1C</item>
+        <item>2A</item>
+        <item>2B</item>
+        <item>3A</item>
+    </array>
+    <array name="shelf_contains_products">
+        <item>P2</item>
+        <item>P2</item>
+        <item>P3</item>
+        <item></item>
+        <item>P1</item>
+        <item>P1</item>
+    </array>
+    <array name="shelf_choosing_probability">
+        <item>60</item>
+        <item>10</item>
+        <item>10</item>
+        <item></item>
+        <item>10</item>
+        <item>10</item>
+    </array>
+
+</resources>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="txtInit">Click on touch pad to start picking process.</string>
+    <string name="txtScanShelf">Please scan shelf %1$s.</string>
+    <string name="txtStartScan">Click on touch pad to start the scan.</string>
+    <string name="txtScanShelfErr">Wrong shelf scanned, please scan %1$s.</string>
+    <string name="txtScanShelfOK">Correct shelf scanned.</string>
+    <string name="txtScanProduct">Please scan product %1$s.</string>
+    <string name="txtScanProductErr">Wrong product scanned, please scan %1$s.</string>
+    <string name="txtScanProductOK">Correct product scanned.</string>
+    <string name="txtScanComplete">Please pick 1 piece. Picking task is now competed.</string>
+
+    <string name="title_activity_test">TestActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+</resources>
