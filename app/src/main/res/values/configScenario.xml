@@ -38,17 +38,17 @@
         Each item represents a row (top to bottom)
         Within the item: comma separated list of shelf ids
         -->
-        <item>3A</item>
+        <item>3A,3B,3C</item>
         <item>2A,2B</item>
-        <item>1A,1B,1C</item>
+        <item>1A</item>
     </array>
     <array name="shelf_ids">
         <item>1A</item>
-        <item>1B</item>
-        <item>1C</item>
         <item>2A</item>
         <item>2B</item>
         <item>3A</item>
+        <item>3B</item>
+        <item>3C</item>
     </array>
     <array name="shelf_contains_products">
         <item>P2</item>
