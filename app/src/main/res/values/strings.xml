@@ -9,6 +9,7 @@
     <string name="txtScanProductErr">Wrong product scanned, please scan %1$s.</string>
     <string name="txtScanProductOK">Correct product scanned.</string>
     <string name="txtScanComplete">Please pick 1 piece. Picking task is now competed.</string>
+    <string name="txtConfirmProduct">Please pick product %1$s out of shelf %2$s.</string>
 
     <string name="title_activity_test">TestActivity</string>
     <string name="dummy_button">Dummy Button</string>

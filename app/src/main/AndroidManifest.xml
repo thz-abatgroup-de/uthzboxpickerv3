@@ -4,9 +4,9 @@
 
     <application
         android:name="com.abat.us.boxpicker_v01.MainApplication"
-        android:label="@string/app_name">
-        android:icon="@mipmap/ic_launcher"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:label="@string/app_name"
+        android:icon="@mipmap/abat_cmyk"
+        android:roundIcon="@mipmap/abat_cmyk"
         android:allowBackup="true"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">

@@ -37,7 +37,7 @@ public class TestActivity extends AppCompatActivity {
 
         {
             HashMap<String,Integer> lMap = new HashMap<>();
-            for( int i = 0; i < 1000; i++) {
+            for( int i = 0; i < 10000; i++) {
                 lModel.setState(MainActivityModel.State.SCAN_SHELF);
                 String lProductIdToPick = lModel.getProductIdToPick();
                 String lShelfIdToPick = lModel.getShelfIdToPick();

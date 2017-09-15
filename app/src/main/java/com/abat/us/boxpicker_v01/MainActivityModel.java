@@ -23,6 +23,7 @@ public class MainActivityModel {
         SCAN_PRODUCT,
         SCAN_PRODUCT_ERR,
         SCAN_PRODUCT_OK,
+        CONFIRM_PRODUCT,
         SCAN_COMPLETE,
     }
 
@@ -78,17 +79,22 @@ public class MainActivityModel {
 
         int lResIdProductIds                   = R.array.product_ids;
         int lResIdProductPics                  = R.array.product_pics;
+        int lResIdProductRotations             = R.array.product_rotations;
         int lResIdShelfIds                     = R.array.shelf_ids;
         int lResIdShelfContainsProductIds      = R.array.shelf_contains_products;
         int lResIdShelfChoosingProbabilities   = R.array.shelf_choosing_probability;
         TypedArray lProductIds                 = lRes.obtainTypedArray(lResIdProductIds);
         TypedArray lProductPics                = lRes.obtainTypedArray(lResIdProductPics);
+        TypedArray lProductRotations           = lRes.obtainTypedArray(lResIdProductRotations);
         TypedArray lShelfIds                   = lRes.obtainTypedArray(lResIdShelfIds);
         TypedArray lShelfContainsProductIds    = lRes.obtainTypedArray(lResIdShelfContainsProductIds);
         TypedArray lShelfChoosingProbabilities = lRes.obtainTypedArray(lResIdShelfChoosingProbabilities);
 
         for (int i = 0; i < lProductIds.length(); i++) {
-            Product lProduct = new Product(lProductIds.getString(i),lProductPics.getDrawable(i));
+            Product lProduct = new Product(
+                    lProductIds.getString(i),
+                    lProductPics.getDrawable(i),
+                    lProductRotations.getInteger(i,0));
             mProductOnShelfManager.addProduct(lProduct);
         }
 
@@ -109,6 +115,7 @@ public class MainActivityModel {
         lShelfColumns.recycle();
         lProductIds.recycle();
         lProductPics.recycle();
+        lProductRotations.recycle();
         lShelfIds.recycle();
         lShelfContainsProductIds.recycle();
         lShelfChoosingProbabilities.recycle();
@@ -149,6 +156,15 @@ public class MainActivityModel {
         }
         return null;
     }
+    int getProductPicRotationToPick() {
+        if (mProductToPick != null) {
+            Product lProductToPick = mProductToPick.getProduct();
+            if (lProductToPick != null) {
+                return lProductToPick.getProductRotation();
+            }
+        }
+        return 0;
+    }
     String getShelfIdToPick() {
         if (mProductToPick != null) {
             Shelf lShelf = mProductToPick.getShelf();
@@ -163,7 +179,10 @@ public class MainActivityModel {
         if( pOldState == pNewState ) return;
         switch (pNewState) {
             case SCAN_SHELF:
-                mProductToPick = mProductOnShelfManager.getNextPick();
+            case SCAN_PRODUCT:
+            case CONFIRM_PRODUCT:
+                if( mProductToPick == null )
+                    mProductToPick = mProductOnShelfManager.getNextPick();
                 break;
             case INIT:
                 mProductToPick = null;
@@ -174,14 +193,17 @@ public class MainActivityModel {
     private class Product {
     // ===============================================================
 
-        public Product(String pProductId, Drawable pProductPic) {
+        public Product(String pProductId, Drawable pProductPic, int pProductRotation) {
             mProductId  = pProductId;
             mProductPic = pProductPic;
+            mProductRotation = pProductRotation;
         }
         private String mProductId;
         private Drawable mProductPic;
+        private int mProductRotation;
         String getProductId() { return mProductId; }
         Drawable getProductPic() { return mProductPic; }
+        int getProductRotation() { return mProductRotation; }
 
     }
 

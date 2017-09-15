@@ -53,7 +53,7 @@ class MainActivityController {
                 else if( mModel.getConfirmProductId() )
                     mModel.setState(MainActivityModel.State.SCAN_PRODUCT );
                 else
-                    mModel.setState(MainActivityModel.State.SCAN_COMPLETE );
+                    mModel.setState(MainActivityModel.State.CONFIRM_PRODUCT );
                 break;
             case SCAN_SHELF:
             case SCAN_SHELF_ERR:
@@ -61,6 +61,8 @@ class MainActivityController {
             case SCAN_PRODUCT_ERR:
                 triggerScan();
                 break;
+            case CONFIRM_PRODUCT:
+                mModel.setState(MainActivityModel.State.SCAN_COMPLETE );
         }
     }
     void onKeyBack() {

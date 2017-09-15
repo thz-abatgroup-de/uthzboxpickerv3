@@ -113,15 +113,21 @@ class MainActivityView {
     private void fillProductPicture(){
         ImageView lImageView = ((ImageView) mActivity.findViewById(R.id.imageControls));
         Drawable lDrawable;
+        int lRotation;
         switch(mModel.getState()) {
             case INIT:
                 lDrawable = ContextCompat.getDrawable(mActivity,R.drawable.ic_scan_white_48dp);
+                lRotation = 0;
                 break;
             default:
                 lDrawable = mModel.getProductPicToPick();
+                lRotation = mModel.getProductPicRotationToPick();
                 break;
         }
-        if( lDrawable != null ) lImageView.setImageDrawable( lDrawable );
+        if( lDrawable != null ) {
+            lImageView.setImageDrawable( lDrawable );
+            lImageView.setRotation(lRotation);
+        }
     }
 
     private void fillInfoText(){
@@ -169,6 +175,15 @@ class MainActivityView {
                 lTextView.setTextColor( ContextCompat.getColor(mActivity, R.color.green) );
                 lTextView.setText(
                         mActivity.getResources().getString(R.string.txtScanProductOK));
+                break;
+            case CONFIRM_PRODUCT:
+                lTextView.setText(
+                                String.format(
+                                        mActivity.getResources().getString(R.string.txtConfirmProduct),
+                                        mModel.getProductIdToPick(),
+                                        mModel.getShelfIdToPick() ) +
+                                "\r\n\n" +
+                                mActivity.getResources().getString(R.string.txtStartScan));
                 break;
             case SCAN_COMPLETE:
                 lTextView.setText(

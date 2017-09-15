@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name" translatable="false">BoxPickerZ</string>
-    <string name="activity_main_name" translatable="false">BoxPickerZ</string>
+    <!--
+mdpi	48x48
+hdpi	72x72
+xhdpi	96x96
+xxhdpi	144x144
+xxxhdpi	192x192
+    -->
+    <string name="app_name" translatable="false">BoxPicker</string>
+    <string name="activity_main_name" translatable="false">BoxPicker</string>
 </resources>

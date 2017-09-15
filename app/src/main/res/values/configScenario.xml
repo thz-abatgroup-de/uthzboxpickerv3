@@ -21,12 +21,20 @@
         <item>USB Stick</item>
     </array>
     <array name="product_pics">
-        <item>@drawable/p1_umbrella</item>   <!-- Product 1 -->
-        <item>@drawable/p2_pen</item>   <!-- Product 1 -->
-        <item>@drawable/p3_travel_mug</item>   <!-- Product 1 -->
-        <item>@drawable/p4_post_its</item>   <!-- Product 1 -->
-        <item>@drawable/p5_bottle_opener</item>   <!-- Product 1 -->
-        <item>@drawable/p6_usb_stick</item>   <!-- Product 1 -->
+        <item>@drawable/p1_umbrella</item>
+        <item>@drawable/p2_pen</item>
+        <item>@drawable/p3_travel_mug</item>
+        <item>@drawable/p4_post_its</item>
+        <item>@drawable/p5_bottle_opener</item>
+        <item>@drawable/p6_usb_stick</item>
+    </array>
+    <array name="product_rotations">
+        <item>0</item>
+        <item>0</item>
+        <item>90</item>
+        <item>90</item>
+        <item>90</item>
+        <item>90</item>
     </array>
 
     <integer name="shelf_rows_max">3</integer>
